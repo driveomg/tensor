@@ -1,25 +1,29 @@
+"""Квадратное уравнение с комлпексными числами."""
+
 import math
 import cmath
 
 
 selector=input('Будут ли использоваться комплексные числа?(Да/Нет) ')
-if selector =='Да' or selector =='да' or selector =='Yes' or selector =='yes' or selector =='+' :
-    print('''Общие вид квадратного уравнения Ax² + Bx + C = 0 , где a ≠ 0
-Введите коэфиценты(Пример: 1+5j)''')
-    a=complex(input("A = "))
-    b=complex(input("B = "))
-    c=complex(input("C = "))
+if selector =='Да' or selector =='да' or \
+   selector =='Yes' or selector =='yes' or \
+   selector =='+' :
+    print('Общие вид квадратного уравнения Ax² + Bx + C = 0 , где a ≠ 0')
+    print('Введите коэфиценты(Пример: 1+5j)')
+    a = complex(input("A = "))
+    b = complex(input("B = "))
+    c = complex(input("C = "))
     if a == 0:
         print('Введн некорректный коэфицент. Коэфицент A не должен быть = 0.')
         exit()   
         
-    if b==0:
-        x =math.sqrt(-c / a)
+    if b == 0:
+        x = math.sqrt(-c / a)
         print(f'Уравнение имеет один корень \nX = {x}')
     else:
-        d=b*b-4*a*c
-        x1=(-b+cmath.sqrt(d))/(2*a)
-        x2=(-b-cmath.sqrt(d))/(2*a)
+        d = b*b - 4*a*c
+        x1 = (-b + cmath.sqrt(d)) / (2*a)
+        x2 = (-b - cmath.sqrt(d)) / (2*a)
         print(f'Дискриминант = {d}')
         print(f'Корни уравнения: \nX₁ = {x1}\nX₂ = {x2}')
        
@@ -70,7 +74,7 @@ else:
             print('Коэфицентом может быть только число')
             c0 += 1
                                             
-    d = b**2 - (4 * a * c)
+    d = b**2 - 4*a*c
     print(f'Дискриминант = {d}')
     if d >= 0:
         x1 = (-b + math.sqrt(b**2 - (4 * a * c))) / (2 * a)

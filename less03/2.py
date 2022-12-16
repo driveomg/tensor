@@ -1,18 +1,22 @@
-import math
-#Добавим возможность движения по диагонаоли
+""" Cкрипт для движения персонажа влево, вправо, вверх и вниз, 
+по диагонали по координатам x и y по координатной оси.
+"""
 
+import math
+
+# Задим константы sin и cos для диагоналей 
 siny = math.sin(math.radians(45))
 cosx = math.cos(math.radians(45))
 
 x = float(0)
 y = float(0)
 
-
+#Наглядный ввод данных и валидация
 while True:
-    print(f'''Вычисление координат объекта по направлению и шагу.
-Для выхода из программы ввиде "Стоп" в любом поле ввода.
-Угол диагоналей = 45°
-Текущие коринаты: X = {round(x, 5)}  Y = {round(y, 5)}''')
+    print(f'Вычисление координат объекта по направлению и шагу.')
+    print('Для выхода из программы ввиде "Стоп" в любом поле ввода.')
+    print('Угол диагоналей = 45°')
+    print(f'Текущие коринаты: X = {round(x, 5)}  Y = {round(y, 5)}')
 
     print(r''' 
      A\  B|  C/
@@ -26,7 +30,11 @@ while True:
     a = False
     while a != True:
         v = input("Введите вектор: ")
-        vv = ['A','B','C','D','E','F','G','H','a','b','c','d','e','f','g','h']
+        vv = ['A', 'B', 'C', 'D', 
+              'E', 'F', 'G', 'H', 
+              'a', 'b', 'c', 'd', 
+              'e', 'f', 'g', 'h'
+              ]
 
         for i in vv:
             if v == i:
@@ -39,43 +47,43 @@ while True:
 
     b = False
     while b != True:    
-        l = input("Введите шаг: ")
-        if l == "стоп" or l == 'Стоп':
+        t = input("Введите шаг: ")
+        if t == "стоп" or t == 'Стоп':
             exit()
             
-        if l.isdigit() == True:
-            l = float(l)       
+        if t.isdigit() == True:
+            t = float(l)       
         else:
             print('Шаг должен быть числом и быть больше нуля')
             continue
-        if l > 0:
+        if t > 0:
             b = True
         else:   print('Шаг должен быть числом и быть больше нуля')
 
     if v == ('A') or v == ('a'):
-        x = x + (l * -cosx)
-        y = y + (l * siny)
+        x = x + (t * -cosx)
+        y = y + (t * siny)
     elif v == ('B') or v == ('b'):
         x = x + 0
-        y =y + l
+        y = y + t
     elif v == ('C') or v == ('c'):
-        x = x + (l * cosx)
-        y = y + (l *  siny)
+        x = x + (t * cosx)
+        y = y + (t * siny)
     elif v == ('D') or v == ('d'):
-        x = x + -l
+        x = x + -t
         y = y + 0
     elif v == ('E') or v == ('e'):
-        x = x + l
+        x = x + t
         y = y + 0
     elif v == ('F') or v == ('f'):
-        x = x + (l * -cosx)
-        y = y + (l * -siny)
+        x = x + (t * -cosx)
+        y = y + (t * -siny)
     elif v == ('G') or v == ('g'):
         x = x + 0
-        y =y + -l
+        y = y + -t
     elif v == ('H') or v == ('h'):
-        x = x + (l * cosx)
-        y =y + (l * -siny)
+        x = x + (t * cosx)
+        y = y + (t * -siny)
 
 
    
