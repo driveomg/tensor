@@ -4,7 +4,6 @@
 
 import math
 
-
 siny = math.sin(math.radians(45))
 cosx = math.cos(math.radians(45))
 
